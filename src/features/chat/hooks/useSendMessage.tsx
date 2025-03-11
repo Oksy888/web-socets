@@ -269,7 +269,7 @@ export const useSendMessage = () => {
       })
     },
 
-    onSettled(data, error, variables, context) {
+    onSettled(data, error, variables) {
       if (isAxiosError(error)) {
         if (error.response?.status === 500 || error.response?.status === 520) {
           addMessage({

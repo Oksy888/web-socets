@@ -1,0 +1,72 @@
+{
+  "errorBoundary": {
+    "Something went wrong": "Something went wrong",
+    "go": "Go to the main page"
+  },
+  "chat": {
+    "message": "Hi, I am your personal assistant. You can ask me anything about rising sounds, hashtags, popular hooks, and more... Here are some example questions:",
+    "button1": "What can you do?",
+    "button2": "Analyze my account",
+    "button3": "Analyze @therock",
+    "button4": "Top 5 sounds in USA?",
+    "button5": "Top 5 sounds in my country?",
+    "button6": "Top 5 sounds in category Music?",
+    "button7": "Top 5 hooks in category Entertainment?",
+    "button8": "Time for posting in my country?",
+    "button9": "Hashtags in category Business in my country?",
+    "button10": "Best personalized Hashtags for me?",
+    "lastMessages": "Last messages",
+    "outOfRequests": "You have run out of requests in your current package, buy a subscription to increase your limits 😔",
+    "loginToUse": "For using AI assistant - log-in into the system!",
+    "noConnection": "The AI assistant is currently reviewing all the new content. In the meantime, you can try the following features:",
+    "enterRequest": "Enter your request..."
+  },
+
+  "errorMessages": {
+    "400.1": {
+      "title": "Sorry for the inconvenience",
+      "text": "We are currently unavailable updating AI components. Please try again later."
+    },
+    "400.2": {
+      "title": "Request is too lengthy",
+      "text": "Your request is too lengthy. It will be available later in your history."
+    },
+    "400.3": {
+      "title": "Invalid URL",
+      "text": "The URL you entered is invalid. Please check and try again."
+    },
+    "400.4": {
+      "title": "Oops! Something went wrong",
+      "text": "We are working on getting this fixed as soon as we can."
+    },
+    "400.5": {
+      "title": "Creator not found",
+      "text": "This creator is not found. Please search him on advanced search."
+    },
+    "400.6": {
+      "title": "Audio Too Short",
+      "text": "Audio must be at least 1 minute in duration."
+    },
+    "403.1": {
+      "title": "Limitation",
+      "text": "Access detailed insights by selecting your plan and activating your trial today."
+    },
+    "401.1": {
+      "title": "Authorization",
+      "text": "You are not authorized to access this page. Please log in and try again."
+    },
+    "471": {
+      "title": "Long video",
+      "text": "The video exceeds 15 minutes in length and cannot be processed. Please try again with a shorter video."
+    },
+    "524": {
+      "title": "Timeout occurred",
+      "text": "The request took too long to process. Please try again later."
+    },
+    "duplicate": {
+      "title": "Duplicate account",
+      "text": "This TikTok account is already linked. Please select a different one."
+    },
+    "openGlobalSearch": "Open global search"
+  }
+}
