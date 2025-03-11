@@ -176,20 +176,6 @@ export const useSendMessage = () => {
       const authorSongsUsedByAuthor = data.Data.find(
         (item: any) => item.DataType === 'SongsUsedByAuthor'
       ).Data
-
-      const authorId = authorAnalyticItem.author.authorId || ''
-
-      // useAIAuthorAnalyticStore.setState(() => ({
-      //   chatId: data.ConversationId,
-      //   authorId: authorId,
-      //   data: {
-      //     authorData: { ...authorAnalyticItem },
-      //     authorStatesAnalytic: { ...authorAuthorStatesAnalytic },
-      //     songsUsedByAuthor: { ...authorSongsUsedByAuthor },
-      //   },
-      // }));
-
-      //navigate('/ai-data-my-account-analytics')
     }
 
     if (data.DataType === 'SoundSearch' && data.Data) {
@@ -210,24 +196,6 @@ export const useSendMessage = () => {
     }
   }
 
-  // useEffect(() => {
-  //   const fetchLimit = async () => {
-  //     if (userId) {
-  //       const limitRes = await ApiMessage.getLimit()
-
-  //       // if (limitRes) {
-  //       //   useGlobalStore.setState({
-  //       //     limit: limitRes.limit,
-  //       //     used: limitRes.used,
-  //       //     remaining: limitRes.remaining,
-  //       //   });
-  //       // }
-  //     }
-  //   }
-
-  //   fetchLimit()
-  // }, [userId])
-
   const { mutate, isPending } = useMutation({
     mutationFn: ({
       conversationId,
@@ -242,9 +210,7 @@ export const useSendMessage = () => {
         user_region: userRegion,
         authorization: `Bearer ${TOKEN}`,
       }
-      /*
-     Web Socets:
-     */
+
       sendJsonMessageNew(Message)
 
       return lastMessageNew && JSON.parse(lastMessageNew.data)

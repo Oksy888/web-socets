@@ -49,7 +49,6 @@ export const Navigation: React.FC<NavigationProps> = ({ navbarOpened }) => {
           justify="start"
           fullWidth
           leftSection={item.icon.base}
-          //leftSection={isActive ? item.icon.active : item.icon.base}
           styles={{
             inner: {
               '&:hover': {
