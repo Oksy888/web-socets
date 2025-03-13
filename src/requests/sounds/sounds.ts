@@ -1,5 +1,5 @@
 import queryString from 'query-string'
-import api from '../../core/axiosInstance'
+import axios from 'axios'
 
 export namespace ApiSounds {
   const link = `/Statistics/SoundsFiltered`
@@ -111,17 +111,17 @@ export namespace ApiSounds {
   }
 
   export const get = async (params: IRequestSounds) => {
-    const res = await api.get<IResponse>(
+    const res = await axios.get<IResponse>(
       `${link}?${queryString.stringify(params)}`
     )
     return res.data
   }
   export const getDefault = async () => {
-    const res = await api.get<IResponse>(defaultLink)
+    const res = await axios.get<IResponse>(defaultLink)
     return res.data
   }
   export const getByAuthor = async (params: IRequestSounds) => {
-    const res = await api.get<IResponse>(
+    const res = await axios.get<IResponse>(
       `${linkByAuthor}?${queryString.stringify(params)}`
     )
 
@@ -152,6 +152,6 @@ export namespace ApiSounds {
   }
 
   export const getFilters = () => {
-    return api.get<IFiltersResponse>(linkFiltersData)
+    return axios.get<IFiltersResponse>(linkFiltersData)
   }
 }

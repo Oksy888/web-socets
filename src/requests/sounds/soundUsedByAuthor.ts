@@ -1,5 +1,5 @@
 import queryString from 'query-string'
-import api from '../../core/axiosInstance'
+import axios from 'axios'
 
 export namespace ApiSoundUsedByAuthor {
   const link = `/Statistics/SoundUsedByAuthor`
@@ -51,7 +51,7 @@ export namespace ApiSoundUsedByAuthor {
   }
 
   export const get = async (params: IRequest) => {
-    const res = await api.get<IResponse>(
+    const res = await axios.get<IResponse>(
       `${link}?${queryString.stringify(params)}`
     )
 

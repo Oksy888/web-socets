@@ -1,4 +1,4 @@
-import { isAxiosError } from 'axios'
+import axios, { isAxiosError } from 'axios'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 import { addMessage, useChatStore } from '../store'
@@ -8,7 +8,7 @@ import { Presets } from '../components/presets'
 import { ApiLLM } from '../llm'
 import { useGlobalStore } from '../../store/globalStore'
 import { useWebSockets } from './useWebSockets'
-import api, { TOKEN } from '../../../core/axiosInstance'
+import { TOKEN } from '../../../core/axiosInstance'
 
 type Payload = Pick<
   ApiMessage.IPostMessagesRequest,
@@ -16,7 +16,7 @@ type Payload = Pick<
 >
 
 export const getUserInfo = async (link: string) => {
-  return await api.get(link, {
+  return await axios.get(link, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('BEARER_TOKEN')}`,
     },

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useChatStore } from '../store'
 import { useEffect } from 'react'
-import api from '../../../core/axiosInstance'
 
 export const ButtonPresets = ({
   buttons,
@@ -33,7 +32,7 @@ export const ButtonPresets = ({
       navigate(link.split('https://gromus.ai')[1])
     } else {
       try {
-        const res = await api.get(link)
+        const res = await axios.get(link)
 
         switch (DataType) {
           case 'HashtagsPersonal':

@@ -1,5 +1,5 @@
 import queryString from 'query-string'
-import api from '../../core/axiosInstance'
+import axios from 'axios'
 
 export namespace ApiAuthorStatesAnalytics {
   const link = `/AuthorStatesAnalytics`
@@ -146,7 +146,7 @@ export namespace ApiAuthorStatesAnalytics {
 
   export const get = async (params: IRequest) => {
     return (
-      await api.get<IResponse>(`${link}?${queryString.stringify(params)}`)
+      await axios.get<IResponse>(`${link}?${queryString.stringify(params)}`)
     ).data
   }
 }

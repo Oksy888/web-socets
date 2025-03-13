@@ -1,7 +1,8 @@
-import api from '../core/axiosInstance'
+import axios from 'axios'
+import { baseURL } from '../core/axiosInstance'
 
 export namespace ApiMessage {
-  const link = `/Conversation`
+  const link = `${baseURL}/Conversation`
 
   export interface IPostMessagesRequest {
     actions?: string
@@ -38,19 +39,19 @@ export namespace ApiMessage {
   }
 
   export const getLastMessages = async () => {
-    const res = await api.get<ISavedMessage[]>(`${link}/GetLastMessages`)
+    const res = await axios.get<ISavedMessage[]>(`${link}/GetLastMessages`)
 
     return res.data
   }
 
   export const fromUser = async (params: IPostMessagesRequest) => {
-    const res = await api.post(`${link}/SaveUserMessage`, params)
+    const res = await axios.post(`${link}/SaveUserMessage`, params)
 
     return res.data
   }
 
   export const fromCopilot = async (params: IPostMessagesRequest) => {
-    const res = await api.post<ISavedMessage>(
+    const res = await axios.post<ISavedMessage>(
       `${link}/SaveCopilotMessage`,
       params
     )
@@ -59,13 +60,13 @@ export namespace ApiMessage {
   }
 
   export const getLimit = async () => {
-    const res = await api.get<ILimitInfo>(`${link}/GetConversationLimit`)
+    const res = await axios.get<ILimitInfo>(`${link}/GetConversationLimit`)
 
     return res.data
   }
 
   export const setRate = async (params: IDataRate) => {
-    const res = await api.post(`${link}/SetRaiting`, params)
+    const res = await axios.post(`${link}/SetRaiting`, params)
 
     return res.data
   }
