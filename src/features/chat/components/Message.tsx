@@ -25,8 +25,6 @@ export type IMessages =
     }
 
 export const _Message = ({ message, first, type }: IMessages) => {
-  const isMobile = useMediaQuery(`(max-width: 768px)`)
-
   let idMessage = ''
   if (type === 'message' && message) {
     const { messageId } = message

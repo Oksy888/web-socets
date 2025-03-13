@@ -112,7 +112,7 @@ const Chat = memo(() => {
       <ScrollArea h={700} viewportRef={scrollRef} offsetScrollbars>
         <Header />
 
-        {data && data?.length > 0 && (
+        {isSuccess && data && data.length > 0 && (
           <Stack h="auto" mt={8}>
             <Accordion
               variant="contained"
