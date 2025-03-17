@@ -1,5 +1,5 @@
-import { Badge, Box, Button, Flex, Group, Stack, Text } from '@mantine/core'
-import { IconActivity, IconPlaylist, IconSmartHome } from '@tabler/icons-react'
+import { Badge, Button, Group, Stack } from '@mantine/core'
+import { IconActivity, IconSmartHome } from '@tabler/icons-react'
 import { JSX, useMemo } from 'react'
 import { NavLink } from 'react-router-dom'
 

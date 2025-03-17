@@ -1,7 +1,6 @@
-import { AppShell, Badge, Box, Burger, Group, Skeleton } from '@mantine/core'
+import { AppShell, Badge, Burger, Group } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Outlet } from 'react-router-dom'
-import { MantineLogo } from '@mantinex/mantine-logo'
 import { Navigation } from './navbar/Navigation'
 
 export function MainPage() {

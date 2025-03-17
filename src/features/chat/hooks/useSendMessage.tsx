@@ -42,27 +42,25 @@ export const useSendMessage = () => {
   const [isLoadingMessages, setIsLoadingMessages] = useState<boolean>(false)
   const { presetButtons, defaultButtons } = Presets()
   const queryClient = useQueryClient()
-
-  const [messageQueue, setMessageQueue] = useState<string[]>([])
   const [allMessages, setAllMessages] = useState<ApiLLM.IResponse[]>([])
 
   useEffect(() => {
     if (socketJsonMessage) {
       const trimmedMessageToText = socketJsonMessage.Text
       setIsLoadingMessages(true)
-
-      setAllMessages((prevData) => [...prevData, socketJsonMessage])
-
-      setMessageQueue((prevQueue) => {
-        const updatedQueue = [...prevQueue, trimmedMessageToText]
-
+      // setAllMessages((prevData) => [...prevData, socketJsonMessage])
+      setAllMessages((prevData) => {
+        const updatedAllMessages = [...prevData, socketJsonMessage]
+        const updatedQueue = [
+          ...prevData.map((data) => data.Text),
+          trimmedMessageToText,
+        ]
         collectMessages(socketJsonMessage, updatedQueue)
-        return updatedQueue
+        return updatedAllMessages
       })
 
       if (trimmedMessageToText === '<|endoftext|>') {
         setIsLoadingMessages(false)
-        setMessageQueue([])
         setAllMessages([])
       }
     }
@@ -161,23 +159,6 @@ export const useSendMessage = () => {
       })
     }
 
-    if (
-      data.DataType === 'AuthorAnalytic' ||
-      (data.DataType === 'AuthorAnalyticPersonal' &&
-        data.Data &&
-        Array.isArray(data.Data))
-    ) {
-      const authorAnalyticItem = data.Data.find(
-        (item: any) => item.DataType === 'AuthorData'
-      ).Data
-      const authorAuthorStatesAnalytic = data.Data.find(
-        (item: any) => item.DataType === 'AuthorStatesAnalytic'
-      ).Data
-      const authorSongsUsedByAuthor = data.Data.find(
-        (item: any) => item.DataType === 'SongsUsedByAuthor'
-      ).Data
-    }
-
     if (data.DataType === 'SoundSearch' && data.Data) {
       useChatStore.setState({
         data: data.Data,
@@ -215,7 +196,7 @@ export const useSendMessage = () => {
 
       return lastMessageNew && JSON.parse(lastMessageNew.data)
     },
-    onSuccess: (data) => {},
+    onSuccess: () => {},
     onMutate: (data: {
       text: string
       date: string
@@ -235,7 +216,7 @@ export const useSendMessage = () => {
       })
     },
 
-    onSettled(data, error, variables) {
+    onSettled(error) {
       if (isAxiosError(error)) {
         if (error.response?.status === 500 || error.response?.status === 520) {
           addMessage({

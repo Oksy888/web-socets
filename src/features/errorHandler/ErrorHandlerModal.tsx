@@ -6,11 +6,6 @@ import {
 import { useNavigate } from 'react-router-dom'
 import { curvesBg, warningIcon, limitation } from '../../assets/img'
 
-type IProps = {
-  //opened: boolean;
-  //onClose: () => void;
-}
-
 export const ErrorHandlerModal = () => {
   const opened = useErrorHandlerModal((s) => s.opened)
   const { text, title, status } = useErrorHandlerModal((s) => s)

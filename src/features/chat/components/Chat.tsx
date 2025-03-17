@@ -262,14 +262,6 @@ const Chat = memo(() => {
 
 export default Chat
 
-const Aside = styled(AppShell.Aside)`
-  @media (min-width: 768px) {
-    background-color: #31323440;
-  }
-
-  justify-content: center;
-`
-
 const MessageSkeleton = () => (
   <Stack gap={8}>
     <Flex gap={12}>

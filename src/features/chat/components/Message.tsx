@@ -1,7 +1,6 @@
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import { Box, Button, Flex, Stack, Text } from '@mantine/core'
-import { useMediaQuery } from '@mantine/hooks'
 import { formatDistance } from 'date-fns'
 import styled from 'styled-components'
 import { IMessage } from '../store'
