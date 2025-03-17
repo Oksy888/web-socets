@@ -1,6 +1,5 @@
 import {
   Accordion,
-  AppShell,
   Box,
   Divider,
   Flex,
@@ -12,7 +11,6 @@ import {
 import { useTranslation } from 'react-i18next'
 import { IconSend2 } from '@tabler/icons-react'
 import { Fragment, memo, useEffect, useRef } from 'react'
-import styled from 'styled-components'
 import { useChatHistoryData } from '../hooks/useChatHistoryData'
 import { useSendMessage } from '../hooks/useSendMessage'
 import { useChatStore } from '../store'

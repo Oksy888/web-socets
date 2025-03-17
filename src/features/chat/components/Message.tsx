@@ -24,11 +24,11 @@ export type IMessages =
     }
 
 export const _Message = ({ message, first, type }: IMessages) => {
-  let idMessage = ''
-  if (type === 'message' && message) {
-    const { messageId } = message
-    idMessage = messageId
-  }
+  // let idMessage = ''
+  // if (type === 'message' && message) {
+  //   const { messageId } = message
+  //   idMessage = messageId
+  // }
   let buttons: { label: string; link: string; dataType: string }[] = []
   if (
     type === 'history' &&
