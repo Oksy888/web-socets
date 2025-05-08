@@ -43,13 +43,7 @@ export function MainPage() {
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">
-        <Navigation />
-        {/*         
-        {Array(15)
-          .fill(0)
-          .map((_, index) => (
-            <Skeleton key={index} h={28} mt="sm" animate={false} />
-          ))} */}
+        <Navigation toggleNavbar={toggleMobile} />
       </AppShell.Navbar>
       <AppShell.Main style={{ justifyContent: 'center', gap: 15 }}>
         <Outlet />

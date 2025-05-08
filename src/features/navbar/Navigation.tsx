@@ -15,9 +15,13 @@ type MenuItem = {
 
 interface NavigationProps {
   navbarOpened?: boolean
+  toggleNavbar?: () => void
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ navbarOpened }) => {
+export const Navigation: React.FC<NavigationProps> = ({
+  navbarOpened,
+  toggleNavbar,
+}) => {
   const menuItems = useMemo<MenuItem[]>(
     () => [
       {
@@ -63,6 +67,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navbarOpened }) => {
           color={isActive ? 'dark_pink.2' : '#fff'}
           autoContrast
           size="sm"
+          onClick={toggleNavbar}
         >
           {item.ai ? (
             <Group gap={12}>
